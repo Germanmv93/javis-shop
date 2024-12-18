@@ -1,0 +1,7 @@
+<div *ngIf="product" class="product-detail">
+  <img [src]="product.image" [alt]="product.title" />
+  <h2>{{ product.title }}</h2>
+  <p><strong>Descripción:</strong> {{ product.description }}</p>
+  <p><strong>Precio:</strong> {{ product.price }} €</p>
+  <button [routerLink]="['/']" class="back-btn">Volver a la tienda</button>
+</div>

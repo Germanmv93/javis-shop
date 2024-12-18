@@ -1,0 +1,18 @@
+<div class="welcome-text">
+  <h1>Bienvenido a Javi's Shop 🛒</h1>
+</div>
+
+<!-- Mostrar los productos -->
+<div *ngIf="products.length > 0; else loading" class="product-list">
+  <div *ngFor="let product of products" class="product-card">
+    <img [src]="product.image" [alt]="product.title" />
+    <h3>{{ product.title }}</h3>
+    <p><strong>Precio:</strong> {{ product.price }} €</p>
+    <a [routerLink]="['/product', product.id]" class="details-btn">Ver Detalles</a>
+  </div>
+</div>
+
+<!-- Plantilla de carga -->
+<ng-template #loading>
+  <p style="text-align: center; margin-top: 20px;">Cargando productos...</p>
+</ng-template>
