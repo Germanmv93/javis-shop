@@ -3,6 +3,8 @@
 </div>
 
 <!-- Mostrar los productos -->
+
+
 <div *ngIf="products.length > 0; else loading" class="product-list">
   <div *ngFor="let product of products" class="product-card">
     <img [src]="product.image" [alt]="product.title" />
@@ -14,5 +16,5 @@
 
 <!-- Plantilla de carga -->
 <ng-template #loading>
-  <p style="text-align: center; margin-top: 20px;">Cargando productos...</p>
+  <p style="text-align: center; margin-top: 20px;">Cargando productos....</p>
 </ng-template>
